@@ -1,11 +1,11 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import InfiniteScrollContainer from "@/components/InfiniteScrollContainer";
 import { Loader2 } from "lucide-react";
 import { Comment } from "./Comment";
 import { useComments } from "./use-comments-hooks";
 
-export default function CommentsList() {
+export default function CommentsListScroll() {
   const {
     data,
     isPending,
@@ -13,6 +13,7 @@ export default function CommentsList() {
     error,
     fetchNextPage,
     hasNextPage,
+    isFetching,
     isFetchingNextPage,
   } = useComments();
 
@@ -23,27 +24,21 @@ export default function CommentsList() {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 mb-10">
       {comments && comments.length > 0 && (
-        <>
-          <div className="space-y-3">
-            {comments.map((comment) => (
-              <Comment key={comment.id} comment={comment} />
-            ))}
-          </div>
-
-          <div className="flex justify-center my-4">
-            {hasNextPage && (
-              <Button
-                onClick={() => fetchNextPage()}
-                disabled={isFetchingNextPage}
-                className="px-4 py-2"
-              >
-                {isFetchingNextPage ? "Loading more..." : "Load more comments"}
-              </Button>
-            )}
-          </div>
-        </>
+        <InfiniteScrollContainer
+          onBottomReached={() => hasNextPage && !isFetching && fetchNextPage()}
+          className="space-y-3"
+        >
+          {comments.map((comment) => (
+            <Comment key={comment.id} comment={comment} />
+          ))}
+          {isFetchingNextPage && (
+            <div className="flex justify-center my-4">
+              <Loader2 className="animate-spin" />
+            </div>
+          )}
+        </InfiniteScrollContainer>
       )}
       {!isError && !comments?.length && (
         <div className="text-center">No comments yet.</div>
