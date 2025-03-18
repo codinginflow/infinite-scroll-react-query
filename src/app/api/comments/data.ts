@@ -1,0 +1,311 @@
+import { User } from "@/lib/auth";
+
+export type Comment = {
+  id: number;
+  user: User;
+  text: string;
+  createdAt: string;
+};
+
+export const comments: Comment[] = [
+  {
+    id: 1,
+    user: { name: "Caleb Carter", avatar: "CC" },
+    text: "I'm bookmarking this for future reference!",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 145).toISOString(),
+  },
+  {
+    id: 2,
+    user: { name: "Zoe Simmons", avatar: "ZS" },
+    text: "A must-read for anyone working on this subject!",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 144).toISOString(),
+  },
+  {
+    id: 3,
+    user: { name: "Nathan Bell", avatar: "NB" },
+    text: "What are some limitations of this approach?",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 143).toISOString(),
+  },
+  {
+    id: 4,
+    user: { name: "Victoria Collins", avatar: "VC" },
+    text: "I found the explanation very accessible and well-written.",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 142).toISOString(),
+  },
+  {
+    id: 5,
+    user: { name: "Ethan Ramirez", avatar: "ER" },
+    text: "This could solve a problem I've been facing. Thanks!",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 141).toISOString(),
+  },
+  {
+    id: 6,
+    user: { name: "Grace Fisher", avatar: "GF" },
+    text: "Would be interesting to see a real-world implementation.",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 140).toISOString(),
+  },
+  {
+    id: 7,
+    user: { name: "Jackson Reed", avatar: "JR" },
+    text: "Do you have any plans to expand on this topic in future posts?",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 139).toISOString(),
+  },
+  {
+    id: 8,
+    user: { name: "Isla Morgan", avatar: "IM" },
+    text: "This really helped me understand the problem better.",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 138).toISOString(),
+  },
+  {
+    id: 9,
+    user: { name: "Owen Walker", avatar: "OW" },
+    text: "Any potential issues if used in a multi-threaded environment?",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 137).toISOString(),
+  },
+  {
+    id: 10,
+    user: { name: "Sophie Hughes", avatar: "SH" },
+    text: "I love how clearly you explained this!",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 136).toISOString(),
+  },
+  {
+    id: 11,
+    user: { name: "Carter Mitchell", avatar: "CM" },
+    text: "Have you tried comparing this to alternative methods?",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 135).toISOString(),
+  },
+  {
+    id: 12,
+    user: { name: "Avery Bennett", avatar: "AB" },
+    text: "I would love a tutorial video on this!",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 134).toISOString(),
+  },
+  {
+    id: 13,
+    user: { name: "Matthew Foster", avatar: "MF" },
+    text: "This approach looks promising. Any known drawbacks?",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 133).toISOString(),
+  },
+  {
+    id: 14,
+    user: { name: "Madison Lewis", avatar: "ML" },
+    text: "Have you tested this approach in production?",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 132).toISOString(),
+  },
+  {
+    id: 15,
+    user: { name: "Dylan Perez", avatar: "DP" },
+    text: "Fantastic breakdown of a complex topic!",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 131).toISOString(),
+  },
+  {
+    id: 16,
+    user: { name: "Samantha Turner", avatar: "ST" },
+    text: "This article should be part of every beginner's guide.",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 130).toISOString(),
+  },
+  {
+    id: 17,
+    user: { name: "Eli Robinson", avatar: "ER" },
+    text: "Would this work efficiently with large datasets?",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 129).toISOString(),
+  },
+  {
+    id: 18,
+    user: { name: "Hannah Ward", avatar: "HW" },
+    text: "The way you broke this down makes it easy to follow.",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 128).toISOString(),
+  },
+  {
+    id: 19,
+    user: { name: "Benjamin Hall", avatar: "BH" },
+    text: "This methodology aligns well with best practices!",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 127).toISOString(),
+  },
+  {
+    id: 20,
+    user: { name: "Megan Brooks", avatar: "MB" },
+    text: "Would love to see a case study using this approach.",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 126).toISOString(),
+  },
+  {
+    id: 21,
+    user: { name: "Zachary Adams", avatar: "ZA" },
+    text: "Can you share more examples with real-world applications?",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 125).toISOString(),
+  },
+  {
+    id: 22,
+    user: { name: "Chloe Parker", avatar: "CP" },
+    text: "I was looking for something like this. Thanks!",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 124).toISOString(),
+  },
+  {
+    id: 23,
+    user: { name: "Brandon Hill", avatar: "BH" },
+    text: "Really appreciate the depth of this article.",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 123).toISOString(),
+  },
+  {
+    id: 24,
+    user: { name: "Natalie Cooper", avatar: "NC" },
+    text: "Does this method work for real-time data processing?",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 122).toISOString(),
+  },
+  {
+    id: 25,
+    user: { name: "Daniel Wright", avatar: "DW" },
+    text: "This explanation makes everything so much clearer!",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 121).toISOString(),
+  },
+  {
+    id: 26,
+    user: { name: "Lucas Moore", avatar: "LM" },
+    text: "Do you have any resources for further reading on this topic?",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 120).toISOString(),
+  },
+  {
+    id: 27,
+    user: { name: "William Green", avatar: "WG" },
+    text: "This would pair well with the concept discussed last week.",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 96).toISOString(),
+  },
+  {
+    id: 28,
+    user: { name: "Olivia Anderson", avatar: "OA" },
+    text: "The examples you provided were very helpful.",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 72).toISOString(),
+  },
+  {
+    id: 29,
+    user: { name: "Alex Johnson", avatar: "AJ" },
+    text: "Great article! Really enjoyed reading this.",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 24 * 3).toISOString(),
+  },
+  {
+    id: 30,
+    user: { name: "Sophia Martinez", avatar: "SM" },
+    text: "I didn't know about this before. Very informative!",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 60).toISOString(),
+  },
+  {
+    id: 31,
+    user: { name: "Grace Mitchell", avatar: "GM" },
+    text: "The diagrams really helped clarify the complex parts.",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 50).toISOString(),
+  },
+  {
+    id: 32,
+    user: { name: "Emma Lee", avatar: "EL" },
+    text: "Interesting perspective! Have you considered the alternative approach?",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 36).toISOString(),
+  },
+  {
+    id: 33,
+    user: { name: "Charlotte Scott", avatar: "CS" },
+    text: "Have you considered the performance implications of this approach?",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 35).toISOString(),
+  },
+  {
+    id: 34,
+    user: { name: "Daniel Carter", avatar: "DC" },
+    text: "I wonder how this would scale with thousands of records?",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 30).toISOString(),
+  },
+  {
+    id: 35,
+    user: { name: "Ethan Harris", avatar: "EH" },
+    text: "This clarified a lot of misconceptions I had. Thank you!",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 24).toISOString(),
+  },
+  {
+    id: 36,
+    user: { name: "Isabella Clark", avatar: "IC" },
+    text: "I've been using this technique for a while and it works great!",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 15).toISOString(),
+  },
+  {
+    id: 37,
+    user: { name: "Maria Garcia", avatar: "MG" },
+    text: "I have a question about the second point. Could you elaborate?",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 12).toISOString(),
+  },
+  {
+    id: 38,
+    user: { name: "Benjamin King", avatar: "BK" },
+    text: "I'm going to implement this in my project right away.",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 10).toISOString(),
+  },
+  {
+    id: 39,
+    user: { name: "Henry Adams", avatar: "HA" },
+    text: "Can you provide any benchmarks for this implementation?",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 8).toISOString(),
+  },
+  {
+    id: 40,
+    user: { name: "Scarlett Phillips", avatar: "SP" },
+    text: "Have you considered writing a follow-up on advanced techniques?",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 6).toISOString(),
+  },
+  {
+    id: 41,
+    user: { name: "Liam Taylor", avatar: "LT" },
+    text: "Looking forward to more content like this.",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 4).toISOString(),
+  },
+  {
+    id: 42,
+    user: { name: "Victoria Nelson", avatar: "VN" },
+    text: "This approach seems more straightforward than what I've been doing.",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 3).toISOString(),
+  },
+  {
+    id: 43,
+    user: { name: "Ava Lewis", avatar: "AL" },
+    text: "Could this approach be applied to larger scale systems?",
+    createdAt: new Date(Date.now() - 1000 * 60 * 120).toISOString(),
+  },
+  {
+    id: 44,
+    user: { name: "Joseph Campbell", avatar: "JC" },
+    text: "This is exactly the solution I've been looking for.",
+    createdAt: new Date(Date.now() - 1000 * 60 * 90).toISOString(),
+  },
+  {
+    id: 45,
+    user: { name: "Amelia Baker", avatar: "AB" },
+    text: "I've shared this with my team. They found it very insightful.",
+    createdAt: new Date(Date.now() - 1000 * 60 * 75).toISOString(),
+  },
+  {
+    id: 46,
+    user: { name: "Noah White", avatar: "NW" },
+    text: "How does this compare to other solutions?",
+    createdAt: new Date(Date.now() - 1000 * 60 * 45).toISOString(),
+  },
+  {
+    id: 47,
+    user: { name: "Christopher Turner", avatar: "CT" },
+    text: "I've been struggling with this problem for weeks. Thank you!",
+    createdAt: new Date(Date.now() - 1000 * 60 * 40).toISOString(),
+  },
+  {
+    id: 48,
+    user: { name: "James Wilson", avatar: "JW" },
+    text: "This is exactly what I needed to understand the concept.",
+    createdAt: new Date(Date.now() - 1000 * 60 * 30).toISOString(),
+  },
+  {
+    id: 49,
+    user: { name: "Mia Jackson", avatar: "MJ" },
+    text: "I think there's a small mistake in the third paragraph.",
+    createdAt: new Date(Date.now() - 1000 * 60 * 15).toISOString(),
+  },
+  {
+    id: 50,
+    user: { name: "David Brown", avatar: "DB" },
+    text: "Thanks for sharing your insights on this topic.",
+    createdAt: new Date(Date.now() - 1000 * 60 * 5).toISOString(),
+  },
+];
