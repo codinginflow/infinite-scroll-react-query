@@ -16,16 +16,20 @@ export async function GET(request: NextRequest) {
   const cursorParam = request.nextUrl.searchParams.get("cursor");
   const cursor = cursorParam ? parseInt(cursorParam) : undefined;
 
+  // You could also pass this as a nother searchParam from the frontend
   const pageSize = 10;
 
+  // Simulate network delay (between 300ms and 1000ms)
   const delay = Math.floor(Math.random() * 700) + 300;
   await new Promise((resolve) => setTimeout(resolve, delay));
 
+  // Remove comment to return an error
   //   return NextResponse.json(
   //     { error: "Failed to fetch comments" },
   //     { status: 500 }
   //   );
 
+  // Below is identical to how I do pagination with Prisma ORM
   const comments = await myOrm.findComments({
     take: pageSize + 1,
     cursor: cursor ? { id: cursor } : undefined,
@@ -53,9 +57,11 @@ export async function POST(request: NextRequest) {
     );
   }
 
+  // Simulate network delay (between 300ms and 1000ms)
   const delay = Math.floor(Math.random() * 700) + 300;
   await new Promise((resolve) => setTimeout(resolve, delay));
 
+  // In a real app, this would come from your authentication service
   const currentUser = await getCurrentUser();
 
   const newComment = await myOrm.createComment({

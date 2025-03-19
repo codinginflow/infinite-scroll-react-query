@@ -34,11 +34,14 @@ export function useCreateComment() {
         .post("/api/comments", { json: newComment })
         .json<CreateCommentResponse>(),
     onSuccess: async ({ comment }) => {
+      // Cancel any outgoing refetches to avoid them overwriting our update
       await queryClient.cancelQueries({ queryKey });
 
+      // Update the query cache with the new comment so we don't have to wait for the refetch
       queryClient.setQueryData<
         InfiniteData<GetCommentsResponse, number | undefined>
       >(queryKey, (oldData) => {
+        // Add the new comment to the first page of results. This depends on your ordering.
         const firstPage = oldData?.pages[0];
 
         if (firstPage) {
@@ -55,6 +58,7 @@ export function useCreateComment() {
         }
       });
 
+      // You can still invalidate the query afterwards but it's not really necessary
       // queryClient.invalidateQueries({ queryKey });
     },
   });
